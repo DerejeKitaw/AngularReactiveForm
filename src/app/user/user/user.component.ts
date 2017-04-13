@@ -12,6 +12,7 @@ export class UserComponent implements OnInit {
 
     userForm:FormGroup;
     user: User= new User();
+    formValues;
 
     constructor(private fb: FormBuilder){}
   ngOnInit() {
@@ -23,7 +24,8 @@ export class UserComponent implements OnInit {
   }
 //TODO implement save method
 save(): void {
-  console.log('Data saved');
+  console.log('Saved: '+ JSON.stringify(this.userForm.value));
+  this.formValues = JSON.stringify(this.userForm.value);
 }
 populateTestData(): void {
   console.log('Data populated');

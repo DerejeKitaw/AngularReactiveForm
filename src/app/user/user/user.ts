@@ -1,6 +1,6 @@
-export interface IUser {
-    id:number;
-    FirstName: string;
-    LastName: string;
-
+export class User {
+    constructor(
+        public firstName = '',
+        public lastName = ''
+        ){}
 }

@@ -3,16 +3,38 @@
     User Log Data
   </div>
   <div class="panel-body">
-    <form class="form-horizontal" novalidate (ngSubmit)="Save()">
-      <!--Form group for First Name Start-->
-      <!--Form group for First Name End-->
+    <form 
+      class="form-horizontal" 
+      novalidate 
+      (ngSubmit)="Save()"
+      [formGroup]="userForm"
+      >
+        <fieldset>
+          <!--Form group for First Name Start-->
+            <div class="form-group">
+              <label 
+                for="firstNameId" 
+                class="col-md-2 control-label">First Name
+              </label>
+            </div>
+            <div class="col-md-8">
+              <input 
+              type="text" 
+              class="form-control" 
+              id="firstNameId" 
+              placeholder="First Name"
+              formControlName="firstName">
+            </div>
+          <!--Form group for First Name End-->
 
-      <!--Form group for Last Name Start-->
-      <!--Form group for Last Name End-->
+          <!--Form group for Last Name Start-->
+          <!--Form group for Last Name End-->
 
-      <!--Form submit buttons start-->
-      <!--Form submit buttons end-->
+          <!--Form submit buttons start-->
+          <!--Form submit buttons end-->
+        </fieldset>
     </form>
   </div>
 </div>
 <!--Form output for development-->
+<br>Dirty:{{userForm.dirty}}

@@ -22,4 +22,13 @@ export class UserComponent implements OnInit {
     });
   }
 //TODO implement save method
+save(): void {
+  console.log('Data saved');
+}
+populateTestData(): void {
+  console.log('Data populated');
+}
+clearTestData(): void {
+  console.log('Data cleared');
+}
 }

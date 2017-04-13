@@ -6,7 +6,7 @@
     <form 
       class="form-horizontal" 
       novalidate 
-      (ngSubmit)="Save()"
+      (ngSubmit)="save()"
       [formGroup]="userForm"
       >
         <fieldset>
@@ -31,6 +31,25 @@
           <!--Form group for Last Name End-->
 
           <!--Form submit buttons start-->
+            <div class="form-group">
+              <div class="col-md-4 col-md-offset-2">
+                <span>
+                <button class="btn btn-primary" type="submit">Save</button>
+                </span>
+                <span>
+                <button class="btn btn-primary" 
+                         type="button"
+                         (click)="populateTestData()">Test Data</button>
+                </span>
+                <span>
+                <button class="btn btn-primary" 
+                         type="button"
+                         (click)="clearTestData()">Clear Data</button>
+                </span>
+
+
+              </div>
+            </div>
           <!--Form submit buttons end-->
         </fieldset>
     </form>

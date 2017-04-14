@@ -20,6 +20,7 @@ export class UserComponent implements OnInit {
     this.voltageDropCalForm = this.fb.group({
        distance: ['', [Validators.required]],
        voltage: ['', [Validators.required]],
+       current: ['', [Validators.required]],
             
     });
   }
@@ -31,7 +32,8 @@ save(): void {
 populateTestData(): void {
   this.voltageDropCalForm.patchValue({
             distance: '300',
-            voltage: '240'
+            voltage: '240',
+            current:'20'
            });
 }
 clearTestData(): void {

@@ -35,6 +35,9 @@
                     </span>
                 </div>
               </div>
+            <!--Form group for Distance End-->
+
+          <!--Form group for Voltage Start-->
             <div class="form-group"
               [ngClass]="{'has-error': (voltageDropCalForm.get('voltage').touched || 
                                               voltageDropCalForm.get('voltage').dirty) &&
@@ -53,17 +56,41 @@
                                                          voltageDropCalForm.get('voltage').dirty) && 
                                                          voltageDropCalForm.get('voltage').errors">
                             <span *ngIf="voltageDropCalForm.get('voltage').errors.required">
-                                Please enter your Distance.
+                                Please enter your Voltage.
                             </span>
                          
                         </span>
               </div>
               </div>
-            <!--Form group for Distance End-->
 
-          <!--Form group for Voltage Start-->
             <!--Form group for Voltage End-->
+    <!--Form group for current Start-->
+            <div class="form-group"
+              [ngClass]="{'has-error': (voltageDropCalForm.get('current').touched || 
+                                              voltageDropCalForm.get('current').dirty) &&
+                                              !voltageDropCalForm.get('current').valid }">
 
+                <label for="firstNameId" 
+                  class="col-md-2 control-label">Current
+                  </label>
+                <div class="col-md-8"><input 
+                  type="text" 
+                  class="form-control" 
+                  id="firstNameId" 
+                  placeholder="current"
+                  formControlName="current"/>
+                    <span class="help-block" *ngIf="(voltageDropCalForm.get('current').touched || 
+                                                         voltageDropCalForm.get('current').dirty) && 
+                                                         voltageDropCalForm.get('current').errors">
+                            <span *ngIf="voltageDropCalForm.get('current').errors.required">
+                                Please enter your Current.
+                            </span>
+
+                    </span>
+                </div>
+              </div>
+ 
+            <!--Form group for current End-->
 <hr>
         </fieldset>
     </form>
@@ -77,6 +104,7 @@
                     <tr>
                         <th>Distance</th>
                         <th>Voltage</th>
+                        <th>Current</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -86,8 +114,33 @@
                     <td>vol</td>-->
                         <td>{{ vol.distance }}</td>
                         <td>{{ vol.voltage }}</td>
+                        <td>{{ vol.current }}</td>
                        
                     </tr>
                 </tbody>
             </table>
         </div>
+
+
+
+        <!--Form submit buttons start-->
+            <div class="form-group">
+              <div class="col-md-6 col-md-offset-2">
+                <span>
+                <button class="btn btn-primary" type="submit">Save</button>
+                </span>
+                <span>
+                <button class="btn btn-primary" 
+                         type="button"
+                         (click)="populateTestData()">Test Data</button>
+                </span>
+                <span>
+                <button class="btn btn-primary" 
+                         type="button"
+                         (click)="clearTestData()">Clear Data</button>
+                </span>
+
+
+              </div>
+            </div>
+            <!--Form submit buttons end-->

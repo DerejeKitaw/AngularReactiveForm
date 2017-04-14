@@ -97,31 +97,45 @@
   </div>
 </div>
 <!--Form output for development start-->
- <div class='table-responsive'>
-            <table class='table'
-                   *ngIf='voltageDropCalForm.valid'>
-                <thead>
-                    <tr>
-                        <th>Distance</th>
-                        <th>Voltage</th>
-                        <th>Current</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor='let vol of voltageDropCalForm.value |userObjArray:distance '>
+<!--{{voltageDropCalForm.value | userObjArray:test}}-->
+{{voltageDropCalForm.status | json}}
+{{distance}}
+<br> 
+<ul *ngFor='let vol of voltageDropCalForm.value |userObjArray:distance '>
                         
                     <!--<td>{{vol}}</td>
                     <td>vol</td>-->
+                        <li>{{ vol.distance }}</li>
+                        <li>{{ vol.voltage }}</li>
+                       
+                    
+ <div class='table-responsive'>
+            <table class='table'
+                   *ngIf='voltageDropCalForm.valid'>
+
+                <thead>
+                    <tr>
+                        <th>Wire Size</th>
+                        <th>ohm_kft</th>
+                        <th>voltage Drop</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--<tr *ngFor='let vol of voltageDropCalForm.value |userObjArray:distance '>-->
+                    <tr *ngFor='let vol of ohmkft '>
+                        
+                    <!--<td>{{vol}}</td>
+                    <td>vol</td>-->
+                        <td>{{ vol.Wire_size }}</td>
+                        <td>{{ vol.ohm_kft }}</td>
                         <td>{{ vol.distance }}</td>
-                        <td>{{ vol.voltage }}</td>
-                        <td>{{ vol.current }}</td>
                        
                     </tr>
                 </tbody>
             </table>
         </div>
 
-
+</ul>
 
         <!--Form submit buttons start-->
             <div class="form-group">

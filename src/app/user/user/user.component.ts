@@ -92,12 +92,13 @@ import { User } from './user';
 export class UserComponent implements OnInit {
 
     voltageDropCalForm:FormGroup;
-    distance;
+    formval;
     voltage;
     current;
     user: User= new User();
     formValues;
     ohmkft =OHMKFT;
+     submitted = false;
     constructor(private fb: FormBuilder){}
   ngOnInit() {
     this.voltageDropCalForm = this.fb.group({
@@ -111,6 +112,8 @@ export class UserComponent implements OnInit {
 save(): void {
   console.log('Saved: '+ JSON.stringify(this.voltageDropCalForm.value));
   this.formValues = JSON.stringify(this.voltageDropCalForm.value);
+  this.submitted = true;
+  this.formval=this.voltageDropCalForm.value;
 }
 populateTestData(): void {
   this.voltageDropCalForm.patchValue({

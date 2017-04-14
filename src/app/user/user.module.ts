@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { UserComponent } from './user/user.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserObjArrayPipe } from './user-obj-array.pipe';
+import { VoltagedropComponent } from './voltagedrop/voltagedrop.component';
 
 @NgModule({
   imports: [
@@ -10,6 +11,11 @@ import { UserObjArrayPipe } from './user-obj-array.pipe';
     ReactiveFormsModule
   ],
   exports:[UserComponent],
-  declarations: [UserComponent, UserObjArrayPipe]
+  declarations: [UserComponent
+  , UserObjArrayPipe
+  , VoltagedropComponent]
 })
-export class UserModule { }
+export class UserModule { 
+
+
+}

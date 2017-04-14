@@ -98,8 +98,8 @@
 </div>
 <!--Form output for development start-->
 <!--{{voltageDropCalForm.value | userObjArray:test}}-->
-{{voltageDropCalForm.status | json}}
-{{distance}}
+<!--{{voltageDropCalForm.status | json}}-->
+<br>Dist{{distance}}
 <br> 
 <ul *ngFor='let vol of voltageDropCalForm.value |userObjArray:distance '>
                         
@@ -128,7 +128,7 @@
                     <td>vol</td>-->
                         <td>{{ vol.Wire_size }}</td>
                         <td>{{ vol.ohm_kft }}</td>
-                        <td>{{ vol.distance }}</td>
+                        <td> <voltagedrop [formval]="formval" [(submitted)]="submitted">  </voltagedrop></td>
                        
                     </tr>
                 </tbody>
@@ -158,3 +158,6 @@
               </div>
             </div>
             <!--Form submit buttons end-->
+            <div *ngIf="submitted">
+            {{formval.distance}}works
+            <div>

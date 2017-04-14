@@ -6,10 +6,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 import {UserModule} from './user/user.module';
+// import { VoltagedropComponent } from './voltagedrop/voltagedrop.component';
 
 @NgModule({
   declarations: [
     AppComponent
+    // ,
+    // VoltagedropComponent
   ],
   imports: [
     BrowserModule,

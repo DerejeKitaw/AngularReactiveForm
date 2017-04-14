@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'userObjArray'
+  name: 'userObjArrayAdd'
 })
-export class UserObjArrayPipe implements PipeTransform {
+export class UserObjArrayAddPipe implements PipeTransform {
 
   transform(value, args:string[]) : any {
     if (!value) {

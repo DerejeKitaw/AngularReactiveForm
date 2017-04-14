@@ -64,13 +64,43 @@
           <!--Form group for Voltage Start-->
             <!--Form group for Voltage End-->
 
-<hr>
+          <!--Form submit buttons start-->
+            <div class="form-group">
+              <div class="col-md-6 col-md-offset-2">
+                <span>
+                <button class="btn btn-primary" type="submit">Save</button>
+                </span>
+                <span>
+                <button class="btn btn-primary" 
+                         type="button"
+                         (click)="populateTestData()">Test Data</button>
+                </span>
+                <span>
+                <button class="btn btn-primary" 
+                         type="button"
+                         (click)="clearTestData()">Clear Data</button>
+                </span>
+
+
+              </div>
+            </div>
+            <!--Form submit buttons end-->
         </fieldset>
     </form>
   </div>
 </div>
 <!--Form output for development start-->
- <div class='table-responsive'>
+<br>{{voltageDropCalForm.value |userObjArray|json}}
+  <br>Dirty:{{voltageDropCalForm.dirty}}
+  <br>Touched: {{voltageDropCalForm.touched}}
+  <br>Pristin: {{voltageDropCalForm.pristine}}
+  <br>Valid:{{voltageDropCalForm.valid}}
+<br>{{voltageDropCalForm.distance}}
+  <br>Value: {{voltageDropCalForm.value |json}}
+  <br>FormValues:{{formValues}}
+  <!--Form output for development end-->
+
+   <div class='table-responsive'>
             <table class='table'
                    *ngIf='voltageDropCalForm.valid'>
                 <thead>

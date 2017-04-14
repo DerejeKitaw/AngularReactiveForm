@@ -11,25 +11,28 @@ import { User } from './user';
 })
 export class UserComponent implements OnInit {
 
-    userForm:FormGroup;
+    voltageDropCalForm:FormGroup;
     user: User= new User();
     formValues;
 
     constructor(private fb: FormBuilder){}
   ngOnInit() {
-    this.userForm = this.fb.group({
-       firstName: ['', [Validators.required]],
-       lastName: ['', [Validators.required]],
+    this.voltageDropCalForm = this.fb.group({
+       distance: ['', [Validators.required]],
+       voltage: ['', [Validators.required]],
             
     });
   }
 //TODO implement save method
 save(): void {
-  console.log('Saved: '+ JSON.stringify(this.userForm.value));
-  this.formValues = JSON.stringify(this.userForm.value);
+  console.log('Saved: '+ JSON.stringify(this.voltageDropCalForm.value));
+  this.formValues = JSON.stringify(this.voltageDropCalForm.value);
 }
 populateTestData(): void {
-  console.log('Data populated');
+  this.voltageDropCalForm.patchValue({
+            distance: '300',
+            voltage: '240'
+           });
 }
 clearTestData(): void {
   console.log('Data cleared');
